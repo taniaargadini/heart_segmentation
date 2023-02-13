@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Sign In{% endblock %}
+{% block content%}
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-secondary text-center">
+            <form method="POST">
+                <div class="container d-flex align-items-center flex-column">
+                                <!-- Masthead Heading-->
+                    <h1 class="masthead-heading text-uppercase mb-0">Sign In</h1>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-heart bs-pink"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Masthead Subheading-->
+                
+                    <tr>
+                        <td>NIP</td>
+                        <td><input type="text" name="nip" pattern="[0-9]+"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Password</td>                        
+                        <td><input type="password" name="password"></td>
+                    </tr>
+                    
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-xl btn-outline-light"><i class="fas fa-heart"></i> Sign In</button>
+                    
+                </div>    
+                <div class="row">
+                    <div class="col-lg-15 ms-auto"><p class="text-center">Don't have an account yet? <a class="text-decoration-none" href="/sign-up">Sign Up</a></p></div>                    
+                </div>
+            </form>
+        </header>
+{% endblock %}
+
+        
+ 

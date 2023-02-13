@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Heart Segmentation{% endblock %}
+{% block content %}
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-secondary text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="../static/images/heart.png" alt="Heart" />
+                <!-- Masthead Heading-->
+                <h1 class="masthead-heading text-uppercase mb-0  ">Heart Segmentation</h1>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-heart bs-pink"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">Unsupervised segmentation of the heart on CT scans</p>
+            </div>
+        </header>
+        
+        <!-- About Section-->
+        <section class="page-section bg-secondary text-white mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-white">Drop Your File Here</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-heart"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a class="btn">
+                    <form action="{{ url_for('auth.upload') }}" id="upload-form" method="POST" enctype="multipart/form-data">
+                        <input type="file" name="file" accept="image/*" class="form-control" id="file-picker" onchange="this.form.submit()">
+                    </form>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+       

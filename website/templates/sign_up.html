@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+        <!-- Masthead-->
+        <header class="masthead bg-primary text-secondary text-center">
+            <form method="POST">
+                <div class="container d-flex align-items-center flex-column">
+                    <!-- Masthead Heading-->
+                    <h1 class="masthead-heading text-uppercase mb-0  ">Sign Up</h1>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light">
+                        <div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-heart bs-pink"></i></div>
+                        <div class="divider-custom-line"></div>
+                    </div>
+                    <!-- Masthead Subheading-->
+                    <tr>
+                        <td>Name</td>                    
+                        <td><input type="text" name="name"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>NIP</td>
+                        <td><input type="text" name="nip" pattern="[0-9]+"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Password</td>                        
+                        <td><input type="password" id="pass" name="password1"></td>
+                        </tr>
+                    <tr>
+                        <td>Re-enter Password</td>                        
+                        <td><input type="password" id="confirm_pass" name="password2"></td>
+                    </tr>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="btn btn-xl btn-outline-light"><i class="fas fa-heart"></i>
+                            Sign Up
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-15 ms-auto"><p class="text-center">Have an account? <a class="text-decoration-none" href="signin">Sign In</a></p></div>                    
+                    </div>
+                </div>
+            </form>
+        </header>
+        <!-- <script src=""></script> -->
+        <!--<script type="text/javascript">
+            $('#pass, #confirm_pass').on('keyup', function() {
+                if ($('#pass').val() == '') {
+                    $('#message').html('')
+                }
+                else if ($('#pass').val() == $('#confirm_pass').val()) {
+                    $('#message').html('Matching').css('color', 'green');
+                } else {
+                    $('#message').html('Not Matching').css('color', 'red');
+                }
+            });
+        </script> -->
+{% endblock %}
+ 

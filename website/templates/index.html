@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}HEART SEGMENTATION{% endblock %}
+{% block content %}
+<!-- Masthead-->
+<header class="masthead bg-primary text-secondary text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Avatar Image-->
+        <img class="masthead-avatar mb-5" src="../static/images/heart.png" alt="Heart" />
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0  ">Heart Segmentation</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-heart bs-pink"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">Unsupervised segmentation of the heart on CT scans</p>
+    </div>
+</header>
+
+<!-- About Section-->
+<section class="page-section bg-secondary text-white mb-0" id="about">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-heart"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- About Section Content-->
+        <div class="row">
+            <div class="col-lg-10 ms-auto"><p class="text-center">Whole heart segmentation from cardiac CT scans is a prerequisite for many clinical applications, but manual delineation is a tedious task and subject to both intra- and inter-observer variation. Automating the segmentation process has thus become an increasingly popular task in the field of image analysis, and is generally solved by either using 3D methods, considering the image volume as a whole, or 2D methods, segmenting each slice independently.</p></div>
+        </div>
+        <!-- About Section Button-->
+        {% if user.is_authenticated %}
+        <div class="text-center mt-4" id="signin">
+            <a class="btn btn-xl btn-outline-light" href="main">
+                <i class="fas fa-heart"></i>
+                Predict
+            </a>
+        </div>
+        {% else %}
+        <div class="text-center mt-4" id="signin">
+            <a class="btn btn-xl btn-outline-light" href="login">
+                <i class="fas fa-heart"></i>
+                Sign In
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

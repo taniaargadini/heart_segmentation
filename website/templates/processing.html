@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Predict{% endblock %}
+{% block content %}
+<!-- Masthead-->
+<header class="masthead bg-primary text-secondary text-center">
+    <div class="container d-flex align-items-center flex-column">
+                        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0  ">Your Segmentation Result</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-heart bs-pink"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="text-center mt-4">
+            <form id="form-Predict" action="{{ url_for('auth.Predict') }}" method="POST" enctype="multipart/form-data">
+                <button id="btnPredictV" class="btn btn-xl btn-outline-light" type="submit" name="mode" value="Predict">Predict</button><p>{{ image_name }}</p>
+                <input type="hidden" name="image" value="{{ image_name }}" readonly>  
+            </form>
+        </div>
+        {% if result is defined %}
+        <img src="{{ result }}" class="img-fluid" alt="Image Result">
+        {% endif %}
+    </div>
+</header>
+{% endblock %}
